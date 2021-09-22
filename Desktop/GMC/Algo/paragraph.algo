@@ -1,0 +1,24 @@
+ALGORITHM paragraph
+VAR
+    i:INTEGER
+    words:INTEGER=0;
+    vowels:INTEGER=0;
+    c:= CHAR=' ';
+    point:= CHAR='.'  ;  
+    s:=STRING;
+BEGIN
+    FOR i FROM 0 TO s[i]=point STEP step  DO
+        IF (s[i]='a'or 'e' or 'i' or 'o' or 'u' or 'y') THEN
+            vowels:=vowels+1;
+        END_IF
+        IF (s[i]=c) THEN
+            words:=words+1;
+        END_IF
+    END_FOR
+    write(i);
+    // i is the number of characters
+    write(words);
+    // words is the number of words
+    write(vowels);
+    // vowels is the number of vowels
+END

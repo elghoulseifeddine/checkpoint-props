@@ -1,0 +1,17 @@
+ALGORITHM three_nb_add
+VAR
+    num1 , num2 , num3 : INTEGER;
+    sum: INTEGER:=0;
+BEGIN
+   read (num1);
+   read (num2);
+   read(num3);
+   sum := num1+num2+num3;
+   write (sum);
+END
+ALGORITHM types
+VAR
+    set_declarations
+BEGIN
+    set_instructions
+END
