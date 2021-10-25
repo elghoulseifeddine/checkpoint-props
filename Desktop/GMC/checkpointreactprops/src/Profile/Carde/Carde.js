@@ -1,5 +1,6 @@
 import React from 'react';
 import {Card, Button} from 'react-bootstrap'
+import propTypes from 'prop-types';
 
 const Carde = (props) => {
   
@@ -33,8 +34,8 @@ Carde.defaultProps = {
  prof: "Always Busy"
 };
 
-Carde.protoTypes={
-  name: propType.string,
-  age: propType.number,
-  prof: propType.string,
+Carde.propTypes={
+  name: propTypes.string,
+  age: propTypes.number,
+  prof: propTypes.string,
 };
