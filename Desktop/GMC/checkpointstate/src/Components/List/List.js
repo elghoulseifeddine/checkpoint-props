@@ -37,10 +37,10 @@ class List extends Component {
       i: this.state.i + 1,
     });
   };
+
   componentDidMount() {
     setInterval(() => this.setState({ timer: this.state.timer + 1 }), 1000);
   }
-
   // FullCards = () => {
   //   this.setState({
   //     onePerson: this.state.person[this.state.i],
@@ -54,13 +54,12 @@ class List extends Component {
   render() {
     return (
       <div>
+        <h1> {this.state.timer}</h1>
         <Carde persons={this.state.person} i={this.state.i} />
 
         <Button onClick={this.showsMore} variant="secondary" size="sm">
           Show more
         </Button>
-        <br/>
-        <span>{timer}</span>
       </div>
     );
   }
