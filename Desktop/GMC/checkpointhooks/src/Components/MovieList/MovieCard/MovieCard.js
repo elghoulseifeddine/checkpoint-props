@@ -8,8 +8,8 @@ const MovieCard = ({title, affiche, description}) => {
     <Card className="bg-dark text-white film">
     <Card.Img src={affiche} alt="Card image" className="imge" />
     <Card.ImgOverlay>
-      <Card.Title>{title}</Card.Title>
-      <Card.Text>
+      <Card.Title style={{color: "rgb(214, 3, 3)",fontSize: "30px"}}>{title}</Card.Title>
+      <Card.Text style={{color: "rgb(214, 3, 3)",fontSize: "15px"}}>
        {description}
       </Card.Text>
     </Card.ImgOverlay>

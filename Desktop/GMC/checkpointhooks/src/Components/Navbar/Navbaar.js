@@ -1,7 +1,8 @@
 import React, {useState} from 'react';
-import {Navbar, Container, Nav, NavDropdown, Form, Button,FormControl} from 'react-bootstrap';
+import {Navbar, Container, Nav, Form, Button,FormControl} from 'react-bootstrap';
+import MovieAdd from '../MovieAdd/MovieAdd';
 
-const Navbaar = ({setInputSearch}) => {
+const Navbaar = ({setInputSearch, addMovie}) => {
 
     const handleChange =(e)=> {
     let newValue= e.target.value;
@@ -19,7 +20,7 @@ const Navbaar = ({setInputSearch}) => {
           style={{ maxHeight: '100px' }}
           navbarScroll
         >
-          <Nav.Link href="#action1">Add movie</Nav.Link>        
+          <MovieAdd addMovie={addMovie} />        
         </Nav>
         <Form className="d-flex">
           <FormControl
