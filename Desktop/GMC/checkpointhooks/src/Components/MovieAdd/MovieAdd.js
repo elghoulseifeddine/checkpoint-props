@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Modal from "react-modal";
 import { Form, Button, Col } from "react-bootstrap";
 import { v4 as uuidv4 } from "uuid";
+import './MovieAdd.css';
 
 const customStyles = {
   content: {
@@ -19,7 +20,7 @@ const MovieAdd = ({ addMovie }) => {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [affiche, setAffiche] = useState("");
-
+  const [rating, setRating] = useState("");
   function openModal() {
     setIsOpen(true);
   }
@@ -35,15 +36,23 @@ const MovieAdd = ({ addMovie }) => {
       title,
       affiche,
       description,
+      rating,
     };
+
+    if(title === "" || affiche=== "" || description === "" || rating === ""){return (closeModal(),
+    alert("You are missing some inputs!!"))}
 
     addMovie(newMovie);
     closeModal();
+    setTitle("");
+    setDescription("");
+    setAffiche("");
+    setRating("")
   };
 
   return (
     <div>
-      <button onClick={openModal}>Add Movie</button>
+      <button className="btnAdd" onClick={openModal}>Add Movie</button>
       <Modal
         isOpen={modalIsOpen}
         onRequestClose={closeModal}
@@ -75,6 +84,13 @@ const MovieAdd = ({ addMovie }) => {
               onChange={(e) => setDescription(e.target.value)}
             />
           </Form.Group>
+          <Form.Group className="mb-3" controlId="formGridAddress2">
+            <Form.Label> Rating : </Form.Label>
+            <Form.Control
+              placeholder="Enter Rating (From 0 to 5) ..."
+              onChange={(e) => setRating(e.target.value)}
+            />
+          </Form.Group>
 
           <Form.Group className="mb-3" id="formGridCheckbox">
             <Form.Check type="checkbox" label="Check me out" />
@@ -83,19 +99,12 @@ const MovieAdd = ({ addMovie }) => {
           <Button
             variant="primary"
             type="submit"
-            onClick={(e) => submitMovie(e)}
+            onClick={(e) =>submitMovie(e)}
           >
             Add
           </Button>
         </Form>
-        {/* <h1> Add Student </h1>
-        <form>
-          <input placeholder="Enter image adress..." />
-          <input placeholder="Enter your first name ..." />
-          <input placeholder="Enter your secondName ..." />
-
-          <button>Submit</button>
-        </form> */}
+    
       </Modal>
     </div>
   );
